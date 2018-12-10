@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "browserify -g browserify-css -t [ babelify --presets [react] ] -e public/src/app.js -o public/bundle.js",
-    "start": "npm run build && node server.js"
+    "postinstall": "npm run build",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
