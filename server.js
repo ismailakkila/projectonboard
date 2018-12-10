@@ -40,7 +40,7 @@ mongodb.MongoClient.connect(process.env.DATABASEURI, { useNewUrlParser: true }, 
     return;
   });
 
-  var port = process.env.WEBPORT || 3000;
+  var port = process.env.PORT || 3000;
   app.listen(port, function(err) {
     if (err) {
       console.log(moment().toISOString() + " - [Node Express] Failed to start server on TCP: " + port);
