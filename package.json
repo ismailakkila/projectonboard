@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^10.0.0",
     "bcrypt": "^3.0.1",
     "body-parser": "^1.18.3",
     "browserify": "^16.2.3",
@@ -40,9 +43,5 @@
     "semantic-ui-react": "^0.82.5",
     "xmlhttprequest": "^1.8.0"
   },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-react": "^6.24.1",
-    "babelify": "^8.0.0"
-  }
+  "devDependencies": {}
 }
