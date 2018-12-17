@@ -1,6 +1,6 @@
 # Project Onboard
 Project Onboard is an experimental web application that allows you to create, view, modify and delete user information via an administration portal.
-You can onboard these users on your platform using Email and SMS available via some platform integrations
+You can onboard these users on your platform using Email and SMS with customizable templates available via some platform integrations.
 
 ## Screenshots
 Admin Portal
