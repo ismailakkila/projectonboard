@@ -1,6 +1,13 @@
 # Project Onboard
 Project Onboard is an experimental web application that allows you to create, view, modify and delete user information via an administration portal.
-You can onboard these users on your platform using Email and SMS with customizable templates available via some platform integrations.
+You can onboard these users on your platform using Email and SMS with customizable templates available via platform integrations.
+
+Supported SMS Platforms:
+[Nexmo](https://www.nexmo.com)
+[MessageBird](https://www.messagebird.com)
+
+Supported Email Platforms:
+SMTP
 
 ## Screenshots
 Admin Portal
@@ -42,5 +49,3 @@ npm start
 * [React](https://reactjs.org)
 * [Redux](https://redux.js.org)
 * [Semantic-UI](https://semantic-ui.com)
-
-
