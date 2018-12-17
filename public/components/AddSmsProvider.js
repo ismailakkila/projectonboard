@@ -51,7 +51,7 @@ class AddSmsProvider extends React.Component {
             </Menu.Item>
             <Divider />
             <Menu.Item onClick={this.handleSmsTypeClick} name="messageBird" as='a'>
-              <Image size='small' style={{display: "block", margin: "0 auto"}} src='/images/smsProviders/messageBird.png' />
+              <Image size='small' style={{display: "block", margin: "0 auto"}} src='/images/smsProviders/messagebird.png' />
               {
                 activeItem === "messageBird"
                 ?
