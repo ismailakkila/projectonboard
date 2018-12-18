@@ -28,6 +28,7 @@ Create a .env file in the root folder with the following parameters:
 ```
 PORT=<Your Web Server Port>
 DATABASEURI=<Your Mongo DB instance>
+DATABASENAME=<Your Mongo DB database name>
 SHARED_SECRET=<Shared Secret for Node Express Session>
 ```
 
