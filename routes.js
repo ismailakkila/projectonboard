@@ -587,7 +587,10 @@ module.exports = function(app, db, passport) {
           var input = verifyInput.resetUser(req.params);
           if (input) {
             var params = {_id: input._id};
-            var query = {initialToken: input.initialToken};
+            var query = {
+              initialToken: input.initialToken,
+              password: null
+            };
             database.modifyUser(db, params, query, responseCallback(res, "User", "Reset"));
             return;
           }

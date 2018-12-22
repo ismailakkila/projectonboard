@@ -256,7 +256,7 @@ var sendEmail = function(userId, query, cb) {
 };
 
 var resetUser = function(userId, cb) {
-  apiClient("GET", apiUrl + "/user/reset/" + userId, input, cb);
+  apiClient("GET", apiUrl + "/user/reset/" + userId, null, cb);
 };
 
 module.exports = {
