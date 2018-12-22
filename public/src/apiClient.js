@@ -255,6 +255,10 @@ var sendEmail = function(userId, query, cb) {
   apiClient("GET", apiUrl + "/email/send/" + userId, query, cb);
 };
 
+var resetUser = function(userId, cb) {
+  apiClient("GET", apiUrl + "/user/reset/" + userId, input, cb);
+};
+
 module.exports = {
   getAdminCount: getAdminCount,
   createAdminUser: createAdminUser,
@@ -283,5 +287,6 @@ module.exports = {
   createEmailTemplate: createEmailTemplate,
   deleteEmailTemplate: deleteEmailTemplate,
   modifyEmailTemplate: modifyEmailTemplate,
-  sendEmail: sendEmail
+  sendEmail: sendEmail,
+  resetUser: resetUser
 };

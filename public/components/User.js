@@ -32,6 +32,7 @@ class User extends React.Component {
   }
 
   handleOnboard() {
+    this.props.resetUser(this.props.user._id);
     var sms = this.props.sms;
     if (sms.smsProviders.length > 0 && sms.smsTemplates.length > 0) {
       var smsProviderId = sms.smsProviders[0]._id;

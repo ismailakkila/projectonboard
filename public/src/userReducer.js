@@ -90,6 +90,25 @@ var modifyUserCallback = function(dispatch) {
   };
 };
 
+var resetUserCallback = function(dispatch) {
+  return function(resetUserResult) {
+    if (resetUserResult.status === 200) {
+      dispatch(updateModifyUserActionCreator(resetUserResult));
+      apiClient.getUsers(function(getUsersResult) {
+        if (getUsersResult.status === 200) {
+          dispatch(updateUsersActionCreator(getUsersResult.message.document));
+        }
+        else {
+          dispatch(updateUsersActionCreator(null));
+        }
+      });
+    }
+    else {
+      dispatch(updateModifyUserActionCreator(modifyUserResult));
+    }
+  };
+};
+
 var updateUsersActionCreator = function(users) {
   return  {
     type: UPDATEUSERS,
@@ -147,6 +166,15 @@ var modifyUser = function(userId, input) {
   };
 };
 
+var resetUser = function(userId) {
+  return function(dispatch) {
+    userId = verifyInput.getUser({_id: userId});
+    if (userId) {
+      apiClient.resetUser(userId._id, resetUserCallback(dispatch));
+    }
+  };
+};
+
 var searchResults = function(input) {
   return function(dispatch) {
     dispatch(updateUsersActionCreator(input));
@@ -160,5 +188,6 @@ module.exports = {
   uploadPhoto: uploadPhoto,
   deleteUser: deleteUser,
   modifyUser: modifyUser,
-  searchResults: searchResults
+  searchResults: searchResults,
+  resetUser: resetUser
 };

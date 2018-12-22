@@ -24,6 +24,7 @@ var deleteEmailTemplateInputKeys = ["_id"];
 var modifyEmailTemplateInputKeys = ["_id", "isDefault"];
 var smtpEmailProviderInputKeys = ["type", "serverHost" ,"serverPort", "authRequired", "authUsername", "authPassword"];
 var sendEmailInputKeys = ["_id", "emailProviderId"];
+var resetUserInputKeys = ["_id"];
 
 var usernameRegex = /^[-\w\.\$@\*\!]{5,30}$/;
 var emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -511,6 +512,18 @@ var sendEmail = function(input) {
   return resultEmailProviderId;
 };
 
+var resetUser = function(input) {
+  var resultObject = checkObject(input, resetUserInputKeys);
+  if (!resultObject) {
+    return false;
+  }
+  var resultId = checkIdFormat(resultObject, "_id");
+  if (!resultId) {
+    return false;
+  }
+  return generateUserCredentials(resultId);
+};
+
 module.exports = {
   getHash: getHash,
   generateUserCredentials: generateUserCredentials,
@@ -534,5 +547,6 @@ module.exports = {
   createEmailTemplate: createEmailTemplate,
   deleteEmailTemplate: deleteEmailTemplate,
   modifyEmailTemplate: modifyEmailTemplate,
-  sendEmail: sendEmail
+  sendEmail: sendEmail,
+  resetUser: resetUser
 };

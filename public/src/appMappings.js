@@ -17,6 +17,7 @@ var uploadPhoto = require("./userReducer").uploadPhoto;
 var deleteUser = require("./userReducer").deleteUser;
 var modifyUser = require("./userReducer").modifyUser;
 var searchResults = require("./userReducer").searchResults;
+var resetUser = require("./userReducer").resetUser;
 
 var addUserViewReducer = require("./addUserViewReducer").addUserViewReducer;
 var resetAddUserView = require("./addUserViewReducer").resetAddUserView;
@@ -104,6 +105,7 @@ var mapDispatchToProps = function(dispatch) {
     deleteUser: deleteUser,
     modifyUser: modifyUser,
     searchResults: searchResults,
+    resetUser: resetUser,
     getSmsProviders: getSmsProviders,
     createSmsProvider: createSmsProvider,
     deleteSmsProvider: deleteSmsProvider,

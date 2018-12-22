@@ -33,6 +33,7 @@ class AuthAdmin extends React.Component {
           deleteUser={this.props.deleteUser}
           modifyUser={this.props.modifyUser}
           searchResults={this.props.searchResults}
+          resetUser={this.props.resetUser}
           resetAddUserView={this.props.resetAddUserView}
           resetUpdateUserView={this.props.resetUpdateUserView}
           uploadPhotoView={this.props.uploadPhotoView}

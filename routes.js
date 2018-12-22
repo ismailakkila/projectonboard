@@ -581,6 +581,29 @@ module.exports = function(app, db, passport) {
         }
       });
 
+    app.route("/api/user/reset/:_id")
+      .get(function(req, res) {
+        if (req.isAuthenticated()) {
+          var input = verifyInput.resetUser(req.params);
+          if (input) {
+            var params = {_id: input._id};
+            var query = {initialToken: input.initialToken};
+            database.modifyUser(db, params, query, responseCallback(res, "User", "Reset"));
+            return;
+          }
+          console.log(moment().toISOString() + " - [Node Express] Bad request");
+          res.status(400);
+          res.json({err: "Bad request"});
+          return;
+        }
+        else {
+          console.log(moment().toISOString() + " - [Node Express] Not Authenticated");
+          res.status(401);
+          res.send("Unauthorized");
+          return;
+        }
+      });
+
     app.route("/admin/login")
       .get(function(req, res) {
         if (req.isAuthenticated()) {

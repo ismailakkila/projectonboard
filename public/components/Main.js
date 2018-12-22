@@ -36,6 +36,7 @@ class Main extends React.Component {
     var users = this.props.user;
     var deleteUser = this.props.deleteUser;
     var modifyUser = this.props.modifyUser;
+    var resetUser = this.props.resetUser;
     var searchResults = this.props.searchResults;
     var getUsers = this.props.getUsers;
     var updateUserView = this.props.updateUserView;
@@ -56,6 +57,7 @@ class Main extends React.Component {
             user={user}
             deleteUser={deleteUser}
             modifyUser={modifyUser}
+            resetUser={resetUser}
             updateUserView={updateUserView}
             resetUpdateUserView={resetUpdateUserView}
             uploadPhoto={uploadPhoto}
