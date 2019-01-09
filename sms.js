@@ -3,7 +3,7 @@ var Messagebird = require('messagebird');
 var lodash = require("lodash");
 var database = require("./database");
 
-var boolTestSmsMode = true;
+var boolTestSmsMode = false;
 
 var smsSender = "PROJONBOARD";
 var smsSubstitutions = {
