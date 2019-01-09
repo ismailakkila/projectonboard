@@ -165,7 +165,7 @@ var sendEmail = function(db, input, cb) {
         var emailSubject = defaultEmailTemplate[0].emailSubject;
         var emailKeywords = Object.keys(emailSubstitutions);
         emailKeywords.forEach(function(keyword) {
-          if (capitalizeKeys.indexOf(keyword) != -1) {
+          if (capitalizeKeys.indexOf(keyword) !== -1) {
             var replacement = lodash.startCase(userResult.document[emailSubstitutions[keyword]]);
           }
           else {

@@ -59,7 +59,7 @@ var sendSms = function(db, input, cb) {
         var smsContent = defaultSmsTemplate[0].smsContent;
         var smsKeywords = Object.keys(smsSubstitutions);
         smsKeywords.forEach(function(keyword) {
-          if (capitalizeKeys.indexOf(keyword) != -1) {
+          if (capitalizeKeys.indexOf(keyword) !== -1) {
             var replacement = lodash.startCase(userResult.document[smsSubstitutions[keyword]]);
           }
           else {
