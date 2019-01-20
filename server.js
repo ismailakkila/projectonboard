@@ -54,9 +54,15 @@ mongodb.MongoClient.connect(process.env.DATABASEURI, { useNewUrlParser: true }, 
     app.use(express.static(indexPath));
 
     app.use(session({
+      name: "connect.sid",
       secret: process.env.SHARED_SECRET,
       resave: true,
-      saveUninitialized: true
+      saveUninitialized: true,
+      cookie: {
+        httpOnly: true,
+        secure: false,
+        maxAge: Date.now() + (30 * 86400 * 1000),
+      }
     }));
     app.use(passport.initialize());
     app.use(passport.session());
